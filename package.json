@@ -1,0 +1,11 @@
+{
+  "name": "coralie-food",
+  "description": "",
+  "version": "1.0.0",
+  "dependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-iconfont": "^4.0.1",
+    "gulp-iconfont-css": "^1.0.1"
+  }
+}
