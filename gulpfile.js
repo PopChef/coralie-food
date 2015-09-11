@@ -2,6 +2,10 @@ var gulp = require('gulp'),
 del = require('del'),
 iconfont = require('gulp-iconfont'),
 iconfontCss = require('gulp-iconfont-css');
+rename = require("gulp-rename"),
+serve = require('gulp-serve');
+
+gulp.task('serve', serve('public'));
 
 var runTimestamp = Math.round(Date.now() / 1000);
 
@@ -11,6 +15,9 @@ gulp.task('clean', function () {
 
 gulp.task('icon', function(){
   return gulp.src(['icons/*.svg'])
+    .pipe(rename(function (path) {
+      path.basename = path.basename.replace('corafood_', '');
+    }))
     .pipe(iconfontCss({
       fontName: 'corafood',
       path: 'template.css',
@@ -23,9 +30,10 @@ gulp.task('icon', function(){
       formats: ['ttf', 'eot', 'woff', 'svg'],
       timestamp: runTimestamp,
 
-      fixedWidth: true
     }))
+
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('default', ['clean', 'icon']);
+gulp.task('serve', serve('./'));

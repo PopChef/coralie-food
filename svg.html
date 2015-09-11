@@ -36,44 +36,48 @@
       transition: opacity .2s;
     }
 
-    .icons .corafood {
-      display: block;
-      font-size: 80px;
-      transition: transform .2s, color .2s;
+    .icons svg {
+      height: 60%;
+      width: 60%;
+      transition: transform .2s;
     }
+    .icons.popchef svg path {transition: fill .2s;}
+    .icons>div:hover svg {transform: scale(2);}
 
-    .icons>div:hover{border-color: #fff;}
-    .icons>div:hover .corafood {transform: scale(2);}
-
-    .icons.popchef .corafood {color: #009f38;}
+    .icons.popchef svg path {fill: #009f38 !important;}
     .icons.popchef>div {border-color: #fff;}
     .icons.popchef>div>pre {opacity: 0;}
   </style>
 </head>
 <body>
   <div id="template">
-    <span class="corafood"></span>
-    <pre><code>.corafood-</code></pre>
+    <img class="corafood">
+    <pre><code></code></pre>
   </div>
   <div class="icons"></div>
-  <div class="link"><a href="svg.html">SVG sources</a></div>
+  <div class="link"><a href="/">WebFonts</a></div>
 
+  <script src="node_modules/svg-injector/dist/svg-injector.min.js"></script>
   <script src="icons.js"></script>
   <script>
     addIcons(function(icons, $icon, i) {
-      $icon.children[0].classList.add('corafood-' + icons[i]);
+      $icon.children[0].src = 'icons/corafood_' + icons[i] + '.svg';
+    }, function() {
+      var iconsToInject = document.querySelectorAll('img.corafood');
+      SVGInjector(iconsToInject);
     });
 
-    var fontSize = 80, delta = 0;
+    var size = 60, delta = 0;
     window.addEventListener('keypress', function (e) {
       delta = 0;
       if (e.keyCode === 112)      delta = +1;
       else if (e.keyCode === 109) delta = -1;
       if (delta !== 0) {
-        var icons = document.querySelectorAll('.icons .corafood');
-        fontSize += delta;
+        var icons = document.querySelectorAll('.icons svg');
+        size += delta;
         for (var i=0; i<icons.length; i++) {
-          icons[i].style.fontSize = fontSize + 'px';
+          icons[i].style.height = size + '%';
+          icons[i].style.width = size + '%';
         }
       }
     });

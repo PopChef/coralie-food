@@ -6,6 +6,9 @@
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-iconfont": "^4.0.1",
-    "gulp-iconfont-css": "^1.0.1"
+    "gulp-iconfont-css": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-serve": "^1.2.0",
+    "svg-injector": "^1.1.3"
   }
 }
