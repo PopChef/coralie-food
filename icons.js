@@ -1,5 +1,5 @@
 function addIcons(func, cb) {
-  var icons = 'bread,carrot,cheese,chef,cow,fish,heart,leaf,leek,pear,pepper,pig,pot,pumpkin,lettuce,shrimp,time,tomato,zuchinni'
+  var icons = 'bread,carrot,cheese,chef,cow,fish,heart,leaf,leek,pear,pepper,pig,pot,pumpkin,lettuce,shrimp,time,user,tomato,zuchinni'
   .split(',');
 
   var $tpl = document.getElementById('template'),
