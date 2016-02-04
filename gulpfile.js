@@ -36,4 +36,4 @@ gulp.task('icon', function(){
 });
 
 gulp.task('default', ['clean', 'icon']);
-gulp.task('serve', serve('./'));
+gulp.task('serve', serve({root: ['showroom', 'dist']}));

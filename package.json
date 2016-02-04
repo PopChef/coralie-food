@@ -1,7 +1,11 @@
 {
   "name": "coralie-food",
-  "description": "",
+  "description": "Générateur font-face pour les icones PopChef (https://eatpopchef.com/)",
   "version": "1.0.0",
+  "licenses": [{
+    "name": "cc by-nc-sa 4.0",
+    "url": "http://creativecommons.org/licenses/by-nc-sa/4.0/"
+  }],
   "dependencies": {
     "del": "^2.0.2",
     "gulp": "^3.9.0",
